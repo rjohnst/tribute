@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="tributeApp">
+<head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="CrTablesCtrl">
+
+<table ng-repeat="cr in crTables">
+    <tr><th colspan="4">CR: {{cr.cr}}</th></tr>
+    <tr>
+        <th>%</th><th>Coins</th><th>Goods</th><th>Items</th>
+    </tr>
+    <tr ng-repeat="row in cr.table">
+        <td>{{row.percent}}</td>
+        <td>{{row.treasure.coins.dice.number}}d{{row.treasure.coins.dice.sides}}
+            x
+            {{row.treasure.coins.factor}} {{row.treasure.coins.type}}</td>
+        <td><span ng-repeat="good in row.treasure.goods track by $index">{{good}} </span></td>
+        <td><span ng-repeat="item in row.treasure.items track by $index">{{item}} </span></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    margin: 10px;
+}
+
+th, td {
+    padding: 0px 2px 0px 2px;
+}
