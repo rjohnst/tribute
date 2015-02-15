@@ -9,22 +9,36 @@
     <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="CrTablesCtrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!--Sidebar content-->
 
-<table ng-repeat="cr in crTables">
-    <tr><th colspan="4">CR: {{cr.cr}}</th></tr>
-    <tr>
-        <th>%</th><th>Coins</th><th>Goods</th><th>Items</th>
-    </tr>
-    <tr ng-repeat="row in cr.table">
-        <td>{{row.percent}}</td>
-        <td>{{row.treasure.coins.dice.number}}d{{row.treasure.coins.dice.sides}}
-            x
-            {{row.treasure.coins.factor}} {{row.treasure.coins.type}}</td>
-        <td><span ng-repeat="good in row.treasure.goods track by $index">{{good}} </span></td>
-        <td><span ng-repeat="item in row.treasure.items track by $index">{{item}} </span></td>
-    </tr>
-</table>
+                Encounter Level:
+                <select ng-model="query.cr">
+                    <option value=""></option>
+                    <option ng-repeat="cr in crTables" value="{{$index+1}}">{{$index+1}}</option>
+                </select>
 
-
+            </div>
+            <div class="col-md-10">
+                <!--Body content-->
+                <table ng-repeat="cr in crTables | filter:query:matchEmptyOrExact(search)">
+                    <tr><th colspan="4">CR: {{cr.cr}}</th></tr>
+                    <tr>
+                        <th>%</th><th>Coins</th><th>Goods</th><th>Items</th>
+                    </tr>
+                    <tr ng-repeat="row in cr.table">
+                        <td>{{row.percent}}</td>
+                        <td>{{row.treasure.coins.dice.number}}d{{row.treasure.coins.dice.sides}}
+                            x
+                            {{row.treasure.coins.factor}} {{row.treasure.coins.type}}</td>
+                        <td><span ng-repeat="good in row.treasure.goods track by $index">{{good}} </span></td>
+                        <td><span ng-repeat="item in row.treasure.items track by $index">{{item}} </span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
