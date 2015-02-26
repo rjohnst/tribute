@@ -21,7 +21,7 @@
                 </select>
 
             </div>
-            <div class="col-md-10">
+            <div class="col-md-5">
                 <!--Body content-->
                 <table ng-repeat="cr in crTables | filter:query:matchEmptyOrExact(search)">
                     <tr><th colspan="4">CR: {{cr.cr}}</th></tr>
@@ -37,6 +37,9 @@
                         <td><span ng-repeat="item in row.treasure.items track by $index">{{item}} </span></td>
                     </tr>
                 </table>
+            </div>
+            <div class="col-md-5">
+                <span ng-click="rollTable(query.cr)">Roll</span>
             </div>
         </div>
     </div>

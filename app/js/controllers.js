@@ -9,6 +9,24 @@ tributeApp.controller('CrTablesCtrl', function($scope) {
         return !query || query.length == 0 ? false : true
     };
 
+    $scope.rollDiceAndFactor = function(number, sides, factor) {
+        var diceResult = 0;
+
+        for (var i = 1; i <= number; ++i) {
+            diceResult += $scope.rollDie(sides);
+        }
+
+        return diceResult * factor;
+    };
+
+    $scope.rollDie = function(sides) {
+        return Math.floor((Math.random() * sides) + 1);
+    }
+
+    $scope.rollTable = function(cr) {
+        alert(cr);
+    }
+
     $scope.crTables = [
         {"cr" : "1", "table" : [
             {"percent" : 7, "treasure" : { "coins" : { "dice" : { "number" : 0, "sides" : 0 }, "factor" : 0, "type" : "" }, "goods" : [ ], "items" : [ ] }},
