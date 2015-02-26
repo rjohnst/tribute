@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-5">
                 <!--Body content-->
-                <table ng-repeat="cr in crTables | filter:query:matchEmptyOrExact(search)">
+                <table ng-repeat="cr in crTables | filter:query:matchEmptyOrExact(query.cr)">
                     <tr><th colspan="4">CR: {{cr.cr}}</th></tr>
                     <tr>
                         <th>%</th><th>Coins</th><th>Goods</th><th>Items</th>
