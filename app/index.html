@@ -5,7 +5,6 @@
     <title>Google Phone Gallery</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
 </head>
@@ -43,7 +42,10 @@
                 <button ng-click="rollTable(query.cr)" class="btn btn-default">Roll</button>
             </div>
             <div class="col-md-6">
-
+                <div>d100: {{d100Result}}</div>
+                <div>coins: {{coinsTotal}}</div>
+                <div>goods: {{goods}}</div>
+                <div>items: {{items}}</div>
             </div>
         </div>
     </div>

@@ -1,10 +1,24 @@
 'use strict';
 
+Array.prototype.getBy = function(prop, val) {
+    for (var i=0; i < this.length; i++) {
+        if (this[i][prop] == val) {
+            return this[i];
+        }
+    }
+}
+
 /* Controllers */
 
 var tributeApp = angular.module('tributeApp', []);
 
 tributeApp.controller('CrTablesCtrl', function($scope) {
+
+    $scope.d100Result = "";
+    $scope.coinsTotal = "";
+    $scope.goods = "";
+    $scope.items = "";
+
     $scope.matchEmptyOrExact = function(query) {
         return !query || query.length == 0 ? false : true
     };
@@ -24,7 +38,18 @@ tributeApp.controller('CrTablesCtrl', function($scope) {
     }
 
     $scope.rollTable = function(cr) {
-        alert(cr);
+        var crTable = this.crTables.getBy("cr", cr);
+        // TODO decide if this should be 2d10 instead
+        this.d100Result = this.rollDie(100);
+        var i = 0, row;
+        do {
+            row = crTable.table[i++];
+        } while (row.percent < this.d100Result);
+
+        var coins = row.treasure.coins;
+        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
+        this.goods = row.treasure.goods;
+        this.items = row.treasure.items;
     }
 
     $scope.crTables = [
