@@ -39,13 +39,13 @@
                 </table>
             </div>
             <div class="col-md-1">
-                <button ng-click="rollTable(query.cr)" class="btn btn-default">Roll</button>
+                <button ng-show="query.cr" ng-click="rollTable(query.cr)" class="btn btn-default">Roll</button>
             </div>
             <div class="col-md-6">
-                <div>d100: {{d100Result}}</div>
-                <div>coins: {{coinsTotal}}</div>
-                <div>goods: {{goods}}</div>
-                <div>items: {{items}}</div>
+                <div ng-show="d100Result">d100: {{d100Result}}</div>
+                <div ng-show="coinsTotal">coins: {{coinsTotal}}</div>
+                <div ng-show="goods">goods: {{goods}}</div>
+                <div ng-show="items">items: {{items}}</div>
             </div>
         </div>
     </div>

@@ -14,10 +14,10 @@ var tributeApp = angular.module('tributeApp', []);
 
 tributeApp.controller('CrTablesCtrl', function($scope) {
 
-    $scope.d100Result = "";
-    $scope.coinsTotal = "";
-    $scope.goods = "";
-    $scope.items = "";
+    $scope.d100Result;
+    $scope.coinsTotal;
+    $scope.goods;
+    $scope.items;
 
     $scope.matchEmptyOrExact = function(query) {
         return !query || query.length == 0 ? false : true
