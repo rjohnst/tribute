@@ -58,7 +58,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
     }
 
     $scope.formatDiceToRoll = function(number, sides, factor) {
-        return number + "d" sides + " x " + factor;
+        return number + "d" + sides + " x " + factor;
     };
 
 });

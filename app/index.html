@@ -30,9 +30,9 @@
                     </tr>
                     <tr ng-repeat="row in cr.table">
                         <td>{{row.percent}}</td>
-                        <td>{{row.treasure.coins.dice.number}}d{{row.treasure.coins.dice.sides}}
-                            x
-                            {{row.treasure.coins.factor}} {{row.treasure.coins.type}}</td>
+                        <td>{{formatDiceToRoll(
+                            row.treasure.coins.dice.number, row.treasure.coins.dice.sides, row.treasure.coins.factor)}}
+                            {{row.treasure.coins.type}}</td>
                         <td><span ng-repeat="good in row.treasure.goods track by $index">{{good}} </span></td>
                         <td><span ng-repeat="item in row.treasure.items track by $index">{{item}} </span></td>
                     </tr>
