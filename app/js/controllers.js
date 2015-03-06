@@ -51,9 +51,14 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         } while (row.percent < this.d100Result);
 
         var coins = row.treasure.coins;
-        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
+        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type
+                + " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
         this.goods = row.treasure.goods;
         this.items = row.treasure.items;
     }
+
+    $scope.formatDiceToRoll = function(number, sides, factor) {
+        return number + "d" sides + " x " + factor;
+    };
 
 });
