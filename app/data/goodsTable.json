@@ -1,0 +1,47 @@
+[
+  { "type" : "A", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 1, "type" : "gp" }, "examples" :
+    [
+      "banded agate", "eye agate"
+    ]
+  },
+  { "type" : "B", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 10, "type" : "gp" }, "examples" :
+  [
+    "bloodstone", "carnelian"
+  ]
+  },
+  { "type" : "C", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 10, "type" : "gp" }, "examples" :
+  [
+    "amber", "amethyst"
+  ]
+  },
+  { "type" : "D", "value" : { "dice" : { "number" : 1, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
+  [
+    "large wool tapestry", "brass mug with jade inlays"
+  ]
+  },
+  { "type" : "E", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
+  [
+    "alexandrite", "aquamarine"
+  ]
+  },
+  { "type" : "F", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
+  [
+    "emerald", "white opal"
+  ]
+  },
+  { "type" : "G", "value" : { "dice" : { "number" : 1, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
+  [
+    "embroided silk and velvet mantle with moonstones", "saphire pendant on gold chain"
+  ]
+  },
+  { "type" : "H", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
+  [
+    "bright green emerald", "blue-white diamond"
+  ]
+  },
+  { "type" : "I", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
+    [
+      "gold and ruby ring", "gold cup set with emeralds"
+    ]
+  }
+]

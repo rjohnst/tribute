@@ -24,6 +24,11 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         $scope.crTables = data;
     });
 
+
+    $http.get('data/goodsTable.json').success(function(data) {
+        $scope.goodsTable = data;
+    });
+
     $scope.matchEmptyOrExact = function(query) {
         return !query || query.length == 0 ? false : true
     };
