@@ -67,4 +67,14 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         return number + "d" + sides + " x " + factor;
     };
 
+    $scope.getGoods = function(type) {
+        var good = this.goodsTable.getBy("type", type);
+        var value = good.value;
+
+        var amount = this.rollDiceAndFactor(value.dice.number, value.dice.sides, value.factor) + value.type;
+        var example = good.examples[Math.floor(Math.random()*good.examples.length)];
+
+        return amount + ": e.g.,  " + example;
+    }
+
 });
