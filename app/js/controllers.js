@@ -18,6 +18,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
     $scope.coinsTotal;
     $scope.coinsFrom;
     $scope.goods;
+    $scope.rolledGoods;
     $scope.items;
 
     $http.get('data/crTables.json').success(function(data) {
@@ -60,6 +61,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
         this.coinsFrom = " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
         this.goods = row.treasure.goods;
+        this.rolledGoods = this.rollGoods(row.treasure.goods);
         this.items = row.treasure.items;
     }
 
@@ -67,14 +69,20 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         return number + "d" + sides + " x " + factor;
     };
 
-    $scope.getGoods = function(type) {
-        var good = this.goodsTable.getBy("type", type);
-        var value = good.value;
+    $scope.rollGoods = function(goods) {
+        var results = [];
 
-        var amount = this.rollDiceAndFactor(value.dice.number, value.dice.sides, value.factor) + value.type;
-        var example = good.examples[Math.floor(Math.random()*good.examples.length)];
+        for (var i = 0; i < goods.length; i++) {
+            var good = this.goodsTable.getBy("type", goods[i]);
+            var value = good.value;
+            var amount = this.rollDiceAndFactor(value.dice.number, value.dice.sides, value.factor) + value.type;
 
-        return amount + ": e.g.,  " + example;
+            var example = good.examples[Math.floor(Math.random() * good.examples.length)];
+
+            results.push(amount + ": e.g.,  " + example);
+        }
+
+        return results;
     }
 
 });
