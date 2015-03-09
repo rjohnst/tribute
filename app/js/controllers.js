@@ -16,6 +16,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
 
     $scope.d100Result;
     $scope.coinsTotal;
+    $scope.coinsFrom;
     $scope.goods;
     $scope.items;
 
@@ -51,8 +52,8 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         } while (row.percent < this.d100Result);
 
         var coins = row.treasure.coins;
-        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type
-                + " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
+        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
+        this.coinsFrom = " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
         this.goods = row.treasure.goods;
         this.items = row.treasure.items;
     }
