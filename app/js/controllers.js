@@ -46,7 +46,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
 
     $scope.rollDie = function(sides) {
         return Math.floor((Math.random() * sides) + 1);
-    }
+    };
 
     $scope.rollTable = function(cr) {
         var crTable = this.crTables.getBy("cr", cr);
@@ -63,7 +63,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         this.goods = row.treasure.goods;
         this.rolledGoods = this.rollGoods(row.treasure.goods);
         this.items = row.treasure.items;
-    }
+    };
 
     $scope.formatDiceToRoll = function(number, sides, factor) {
         return number + "d" + sides + " x " + factor;
@@ -77,12 +77,24 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
             var value = good.value;
             var amount = this.rollDiceAndFactor(value.dice.number, value.dice.sides, value.factor) + value.type;
 
-            var example = good.examples[Math.floor(Math.random() * good.examples.length)];
+            var example = this.getRandomExample(good.examples);
 
             results.push(amount + ": e.g.,  " + example);
         }
 
         return results;
-    }
+    };
+
+    $scope.addGood = function(goodsIndex) {
+        var good = this.goodsTable.getBy("type", this.goods[goodsIndex]);
+
+        var newExample = this.getRandomExample(good.examples);
+
+        this.rolledGoods[goodsIndex] += ", " + newExample;
+    };
+
+    $scope.getRandomExample = function(examples) {
+        return examples[Math.floor(Math.random() * examples.length)]
+    };
 
 });
