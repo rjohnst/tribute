@@ -48,14 +48,19 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         return Math.floor((Math.random() * sides) + 1);
     };
 
-    $scope.rollTable = function(cr) {
-        var crTable = this.crTables.getBy("cr", cr);
+    function rollOnPercentileTable(table) {
         // TODO decide if this should be 2d10 instead
         this.d100Result = this.rollDie(100);
         var i = 0, row;
         do {
-            row = crTable.table[i++];
+            row = table[i++];
         } while (row.percent < this.d100Result);
+        return row;
+    }
+
+    $scope.rollTable = function(cr) {
+        var crTable = this.crTables.getBy("cr", cr);
+        var row = rollOnPercentileTable(crTable.table);
 
         var coins = row.treasure.coins;
         this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
