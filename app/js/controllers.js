@@ -14,20 +14,16 @@ var tributeApp = angular.module('tributeApp', []);
 
 tributeApp.controller('CrTablesCtrl', function($scope, $http) {
 
-    $scope.d100Result;
-    $scope.coinsTotal;
-    $scope.coinsFrom;
-    $scope.goods;
-    $scope.rolledGoods;
-    $scope.items;
-
     $http.get('data/crTables.json').success(function(data) {
         $scope.crTables = data;
     });
 
-
     $http.get('data/goodsTable.json').success(function(data) {
         $scope.goodsTable = data;
+    });
+
+    $http.get('data/itemsTables.json').success(function(data) {
+        $scope.itemsTables = data;
     });
 
     $scope.matchEmptyOrExact = function(query) {
@@ -48,7 +44,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         return Math.floor((Math.random() * sides) + 1);
     };
 
-    function rollOnPercentileTable(table) {
+    $scope.rollOnPercentileTable = function(table) {
         // TODO decide if this should be 2d10 instead
         this.d100Result = this.rollDie(100);
         var i = 0, row;
@@ -60,14 +56,15 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
 
     $scope.rollTable = function(cr) {
         var crTable = this.crTables.getBy("cr", cr);
-        var row = rollOnPercentileTable(crTable.table);
+        var row = this.rollOnPercentileTable(crTable.table);
 
         var coins = row.treasure.coins;
-        this.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
-        this.coinsFrom = " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
-        this.goods = row.treasure.goods;
-        this.rolledGoods = this.rollGoods(row.treasure.goods);
-        this.items = row.treasure.items;
+        $scope.coinsTotal = this.rollDiceAndFactor(coins.dice.number, coins.dice.sides, coins.factor) + coins.type;
+        $scope.coinsFrom = " (from " + this.formatDiceToRoll(coins.dice.number, coins.dice.sides, coins.factor) + ")";
+        $scope.goods = row.treasure.goods;
+        $scope.rolledGoods = this.rollGoods(row.treasure.goods);
+        $scope.items = row.treasure.items;
+        $scope.rolledItems = this.rollItems(row.treasure.items);
     };
 
     $scope.formatDiceToRoll = function(number, sides, factor) {
@@ -102,4 +99,15 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         return examples[Math.floor(Math.random() * examples.length)]
     };
 
+    $scope.rollItems = function(items) {
+        var results = [];
+
+        for (var i = 0; i < items.length; i++) {
+            var item = this.itemsTables.getBy("level", items[i]);
+            var row = this.rollOnPercentileTable(item.table);
+            results.push(row.item.name + " [" + row.item.source + "]");
+        }
+
+        return results;
+    }
 });
