@@ -112,7 +112,7 @@
     {"percent" : 99, "item" : { "source" : "P124", "name" :  "Chainmail" }},
     {"percent" : 100, "item" : { "source" : "P125", "name" :  "Tower shield, masterwork" }}
   ]},
-  {"level" : "1/2", "table" : [
+  {"level" : "2", "table" : [
     {"percent" : 1, "item" : { "source" : "P200", "name" :  "Scroll of arcane lock (A)" }},
     {"percent" : 2, "item" : { "source" : "M25", "name" :  "Crystal of lifekeeping, least" }},
     {"percent" : 3, "item" : { "source" : "M160", "name" :  "Everfull mug" }},
