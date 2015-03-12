@@ -201,5 +201,74 @@
     {"percent" : 97, "item" : { "source" : "M163", "name" :  "Life ring" }},
     {"percent" : 99, "item" : { "source" : "D264", "name" :  "Quaal’s feather token, tree" }},
     {"percent" : 100, "item" : { "source" : "M66", "name" :  "Revelation crystal, least" }}
+  ]},
+  {"level" : "3", "table" : [
+
+  ]},
+  {"level" : "4", "table" : [
+
+  ]},
+  {"level" : "5", "table" : [
+
+  ]},
+  {"level" : "6", "table" : [
+
+  ]},
+  {"level" : "7", "table" : [
+
+  ]},
+  {"level" : "8", "table" : [
+
+  ]},
+  {"level" : "9", "table" : [
+
+  ]},
+  {"level" : "10", "table" : [
+
+  ]},
+  {"level" : "11", "table" : [
+
+  ]},
+  {"level" : "12", "table" : [
+
+  ]},
+  {"level" : "13", "table" : [
+
+  ]},
+  {"level" : "14", "table" : [
+
+  ]},
+  {"level" : "15", "table" : [
+
+  ]},
+  {"level" : "16", "table" : [
+
+  ]},
+  {"level" : "17", "table" : [
+
+  ]},
+  {"level" : "18", "table" : [
+
+  ]},
+  {"level" : "19", "table" : [
+
+  ]},
+  {"level" : "20", "table" : [
+
+  ]},
+  {"level" : "21", "table" : [
+
+  ]},
+  {"level" : "22", "table" : [
+
+  ]},
+  {"level" : "23", "table" : [
+
+  ]},
+  {"level" : "24", "table" : [
+
+  ]},
+  {"level" : "25", "table" : [
+
   ]}
 ]
