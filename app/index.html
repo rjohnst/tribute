@@ -50,7 +50,10 @@
                     <span ng-click="addGood($index)">+</span>
                 </div>
                 <div ng-show="items">items: {{items}}</div>
-                <div ng-show="rolledItems" ng-repeat="item in rolledItems">{{item}}</div>
+                <div ng-show="rolledItems" ng-repeat="item in rolledItems">
+                    {{item}}
+                    <span ng-click="rerollItem($index)">⟳</span>
+                </div>
             </div>
         </div>
     </div>

@@ -79,7 +79,7 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
             var value = good.value;
             var amount = this.rollDiceAndFactor(value.dice.number, value.dice.sides, value.factor) + value.type;
 
-            var example = this.getRandomExample(good.examples);
+            var example = this.getRandomGood(good.examples);
 
             results.push(amount + ": e.g.,  " + example);
         }
@@ -90,12 +90,12 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
     $scope.addGood = function(goodsIndex) {
         var good = this.goodsTable.getBy("type", this.goods[goodsIndex]);
 
-        var newExample = this.getRandomExample(good.examples);
+        var newExample = this.getRandomGood(good.examples);
 
         this.rolledGoods[goodsIndex] += ", " + newExample;
     };
 
-    $scope.getRandomExample = function(examples) {
+    $scope.getRandomGood = function(examples) {
         return examples[Math.floor(Math.random() * examples.length)]
     };
 
@@ -103,11 +103,19 @@ tributeApp.controller('CrTablesCtrl', function($scope, $http) {
         var results = [];
 
         for (var i = 0; i < items.length; i++) {
-            var item = this.itemsTables.getBy("level", items[i]);
-            var row = this.rollOnPercentileTable(item.table);
-            results.push(row.item.name + " [" + row.item.source + "]");
+            results.push(this.getRolledItem(items[i]));
         }
 
         return results;
+    };
+
+    $scope.rerollItem = function(itemsIndex) {
+        this.rolledItems[itemsIndex] = this.getRolledItem(this.items[itemsIndex])
+    };
+
+    $scope.getRolledItem = function(level) {
+        var item = this.itemsTables.getBy("level", level);
+        var row = this.rollOnPercentileTable(item.table);
+        return row.item.name + " [" + row.item.source + "]";
     }
 });
