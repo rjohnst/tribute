@@ -1,47 +1,47 @@
 [
   { "type" : "A", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 1, "type" : "gp" }, "examples" :
     [
-      "banded agate", "eye agate"
+      "banded agate", "eye agate", "moss agate", "azurite", "blue quartz", "hematite", "lapis lazuli", "malachite", "obsidian", "rhodochrosite", "tiger eye turquoise", "freshwater pearl", "steel pledge pin", "boarskin hat", "embroidered linen blanket", "platter carved from maple", "sealskin boots", "teak bowl", "cotton tunic with royal crest", "bronze spectacles", "granite dice", "satin belt", "hammered brass wine cup"
     ]
   },
   { "type" : "B", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 10, "type" : "gp" }, "examples" :
   [
-    "bloodstone", "carnelian"
+    "bloodstone", "carnelian", "chalcedony", "chrysoprase", "citrine", "iolite", "jasper", "moonstone", "onyx", "peridot", "clear quartz", "sard", "sardonyx", "rose quartz", "smoky quartz", "star rose quartz", "zircon", "silver ewer", "carved bone or ivory statuette", "small gold bracelet", "bronze statue of a knight", "mahogany bust of a poet", "silver ring with blue quartz", "small perfume bottle of black crystal", "purple velvet gloves with silver stitching", "ornate wooden box", "bronze earrings set with ceramic ovals", "copper horn ringed with seashells", "oak candlestick", "mahogany tray carved with flowers", "rhinoceros-hide sack", "peacock-feather mask", "broad-brimmed velvet hat", "zircon-studded dancing slippers"
   ]
   },
   { "type" : "C", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 10, "type" : "gp" }, "examples" :
   [
-    "amber", "amethyst"
+    "amber", "amethyst", "chrysoberyl", "coral", "red gernet", "brown-green garnet", "jade", "jet", "white pearl", "golden pearl", "pink pearl", "silver pearl", "red spinel tourmaline", "red-brown spinel tourmaline", "deep green spinel tourmaline", "cloth of gold vestments", "black velvet mask adorned with citrines", "silver chalice with lapis inlay", "coral saucer", "heraldic banner edged with swan feathers", "marble relief of dwarf wrestlers", "copper anklet plated with silver", "prayer mat with inlaid gold thread"
   ]
   },
   { "type" : "D", "value" : { "dice" : { "number" : 1, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
   [
-    "large wool tapestry", "brass mug with jade inlays"
+    "large wool tapestry", "brass mug with jade inlays", "harp painted with pastoral scene", "mountain landscape in ash frame", "wall hanging of a forest in black ink", "velvet cloak with eagle feathers", "small marble statue of an athlete", "granite cup carved with staring eyes", "ivory bust of a high priest", "mithral circlet engraved with elvish poetry", "dragonhide gloves", "onyx hourglass set with malachite", "coral brooch with oval jasper setting", "gold anklet with bloodstone cabochons", "adamantine armband with filigree carvings", "oil painting of a royal wedding", "jade cameo pendant", "life-size darkwood cat sculpture with yellow topaz eyes"
   ]
   },
   { "type" : "E", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
   [
-    "alexandrite", "aquamarine"
+    "alexandrite", "aquamarine", "violet garnet", "black pearl", "deep blue spinel", "golden yellow topaz", "silver comb with moonstones", "silver-plated scabbard with jet cabochons", "carved darkwood harp with ivory inlay and zircon gems", "solid gold idol (10 lb.)", "linen tapestry depicting giants destroying a town", "obsidian statue of a hunting dog", "painting of a sailing ship", "onyx sphere with trees carved in relief", "silk banner embroidered with performing musician", "small masterpiece portrait in gold frame inlaid with opal"
   ]
   },
   { "type" : "F", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 100, "type" : "gp" }, "examples" :
   [
-    "emerald", "white opal"
+    "emerald", "white opal", "black opal", "fire opal", "blue sapphire", "fiery yellow corundum", "rich purple corundum", "blue star sapphire", "", "black star sapphire", "star ruby", "gold dragon comb with red garnet eye", "gold and topaz bottle stopper cork", "ceremonial electrum dagger with star ruby in pommel", "eyepatch with mock eye of sapphire and moonstone", "fire opal pendant on gold chain", "masterpiece portrait of an elite general", "dinosaurhide tapestry depicting a mage", "mother-of-pearl statue of a naga", "mithral comb with opal runes", "silver crown with opal inlay", "vestments of celestial lion fur", "set of six gold and silver bells with jeweled handles"
   ]
   },
   { "type" : "G", "value" : { "dice" : { "number" : 1, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
   [
-    "embroided silk and velvet mantle with moonstones", "saphire pendant on gold chain"
+    "embroided silk and velvet mantle with moonstones", "saphire pendant on gold chain", "embroidered and bejeweled glove", "jeweled anklet", "golden circlet with four aquamarines", "necklace of pink pearls", "basalt pyramid with images of dragons inlaid in gems", "lead crown adorned with black pearls", "bejeweled gold tiara shaped like dragon horns", "bronze music box with pearl inlay", "mahogany bracelet plated with gold and platinum", "dragonhide formal shoes with electrum buckles"
   ]
   },
   { "type" : "H", "value" : { "dice" : { "number" : 2, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
   [
-    "bright green emerald", "blue-white diamond"
+    "bright green emerald", "blue-white diamond", "canary diamond", "pink diamond", "brown diamond", "blue diamond", "jacinth", "jeweled gold crown", "jeweled electrum ring", "bone mug set with opals", "platinum sunburst crown"
   ]
   },
   { "type" : "I", "value" : { "dice" : { "number" : 4, "sides" : 4 }, "factor" : 1000, "type" : "gp" }, "examples" :
     [
-      "gold and ruby ring", "gold cup set with emeralds"
+      "gold and ruby ring", "gold cup set with emeralds", "regal scepter set with sapphires", "platinum locket ringed with garnets", "mithral statue of a noble horse", "platinum tiara", "gilt dragon’s skull with opal eyes and adamantine teeth"
     ]
   }
 ]
